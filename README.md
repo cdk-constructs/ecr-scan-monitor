@@ -19,5 +19,20 @@ npm i @simple-cdk-constructs/ecr-scan-monitor
 ## Usage
 
 ```typescript
-[placeholder]
+import { Topic } from '@aws-cdk/aws-sns';
+import { SnsTopic } from '@aws-cdk/aws-events-targets';
+import { ECRScanMonitor } from '@simple-cdk-constructs/ecr-scan-monitor';
+
+// ...
+
+    let snsTopic = new Topic(this, 'notiification-topic', {
+        topicName: 'ecr-image-vulnerability'
+    });
+    
+    new ECRScanMonitor(this, 'scan-monitor', {
+        target: new SnsTopic(snsTopic)
+    });
+  
+// ...
+
 ```
