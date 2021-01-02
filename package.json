@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "src"
   },
-  "repository": "https://github.com/INSERT_REPO_HERE",
+  "repository": "https://github.com/cdk-constructs/ecr-scan-monitor",
   "version": "0.2.0",
   "files": [
     "/lib"
