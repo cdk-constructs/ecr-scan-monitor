@@ -2,7 +2,7 @@
   "name": "@simple-cdk-constructs/ecr-scan-monitor",
   "publishConfig": {
     "access": "public",
-    "directory": "src"
+    "directory": "lib"
   },
   "repository": "https://github.com/cdk-constructs/ecr-scan-monitor",
   "version": "1.0.2",
