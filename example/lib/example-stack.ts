@@ -12,8 +12,8 @@ export class ExampleStack extends Stack {
       topicName: 'test-sns-topic'
     });
 
-    let scanMonitor = new ECRScanMonitor(this, 'ecr-scan-monitor', {
-      target: new SnsTopic(snsTopic)
-    });
+    // let scanMonitor = new ECRScanMonitor(this, 'ecr-scan-monitor', {
+    //   target: new SnsTopic(snsTopic)
+    // });
   }
 }
