@@ -1,9 +1,19 @@
-import * as cdk from '@aws-cdk/core';
+import { Stack, StackProps, Construct } from '@aws-cdk/core';
+import { Topic } from '@aws-cdk/aws-sns';
+import { SnsTopic } from '@aws-cdk/aws-events-targets';
 
-export class ExampleStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+import { ECRScanMonitor } from '@simple-cdk-constructs/ecr-scan-monitor';
+
+export class ExampleStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    let snsTopic = new Topic(this, 'sns-topic', {
+      topicName: 'test-sns-topic'
+    });
+
+    let scanMonitor = new ECRScanMonitor(this, 'ecr-scan-monitor', {
+      target: new SnsTopic(snsTopic)
+    });
   }
 }
