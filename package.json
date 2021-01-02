@@ -1,5 +1,5 @@
 {
-  "name": "@INSERT_SCOPE/INSERT_PACKAGE",
+  "name": "@simple-cdk-constructs/ecr-scan-monitor",
   "publishConfig": {
     "access": "public",
     "directory": "src"
@@ -34,6 +34,9 @@
     "@aws-cdk/core": "1.80.0"
   },
   "dependencies": {
+    "@aws-cdk/aws-events": "^1.81.0",
+    "@aws-cdk/aws-events-targets": "^1.81.0",
+    "@aws-cdk/aws-sns": "^1.81.0",
     "@aws-cdk/core": "1.80.0"
   }
 }
